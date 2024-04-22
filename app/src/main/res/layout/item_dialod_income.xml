@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="400dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/white"
+    >
+
+    <RelativeLayout
+        android:id="@+id/up_in"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#0F814D"
+        android:gravity="top">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif-medium"
+            android:text="IN"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_below="@+id/up_in"
+        android:id="@+id/container_main_dailog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <EditText
+            android:id="@+id/customer_name_edt_i"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#D6D6D6"
+            android:hint="Customer name"
+            android:inputType="textPersonName"
+            android:textColor="@color/black"
+            android:textColorHint="#929292"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/customer_no_edt_i"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/customer_name_edt_i"
+            android:backgroundTint="#D6D6D6"
+            android:hint="Customer number"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textColorHint="#929292"
+            android:textSize="15dp" />
+
+
+        <EditText
+            android:id="@+id/amount_edt_i"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/customer_no_edt_i"
+            android:backgroundTint="#D6D6D6"
+            android:hint="Amount"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textColorHint="#929292"
+            android:textSize="15dp" />
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/submit_btn_i"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_below="@+id/container_main_dailog"
+        android:layout_marginTop="65dp"
+        android:background="@drawable/ripal_effect_rectangle">
+
+
+        <TextView
+             android:id="@+id/updateBtnItem"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="UPDATE"
+            android:textColor="#0F814D"
+
+            android:textSize="20dp" />
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

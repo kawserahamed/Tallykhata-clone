@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+        android:id="@+id/money_RV1"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        >
+
+        <ImageView
+            android:id="@+id/left_arrow_money_activity"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/leftarrow" />
+
+        <TextView
+            android:id="@+id/Title_text_money_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@id/left_arrow_money_activity"
+            android:text="You Ruppes"
+            android:textSize="20dp"
+
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/money_RV2"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/money_RV1"
+        android:background="#ECE9E9"
+         >
+
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/edt_amount"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:backgroundTint="@color/white"
+            android:hint="Enter amount "
+            android:padding="10dp"
+            app:cardCornerRadius="10dp">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_amount_money"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textSize="15dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"
+         >
+
+        <Button
+            android:id="@+id/save_money_activity"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="save" />
+    </RelativeLayout>
+
+</RelativeLayout>
