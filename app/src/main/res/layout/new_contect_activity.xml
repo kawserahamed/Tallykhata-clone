@@ -152,12 +152,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/edit_mobile_data"
-            android:hint="Rupees">
+            android:hint="TAKA">
 
 
             <com.google.android.material.textfield.TextInputEditText
 
-                android:id="@+id/edit_ruppes"
+                android:id="@+id/edit_taka"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"

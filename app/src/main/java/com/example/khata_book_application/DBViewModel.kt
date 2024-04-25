@@ -1,12 +1,14 @@
 package com.example.khata_book_application
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.khata_book_application.Fragment.ModelData
 import java.util.Locale
 
-class DBViewModel : ViewModel() {
-    private val originalList = arrayListOf<ModelData>()
+class DBViewModel(application: Application) : AndroidViewModel(application) {
+    var db = DB_Helper(application)
+    private val originalList = db.readData()
     private val filteredList = MutableLiveData<List<ModelData>>()
 
     fun getFilteredList(): MutableLiveData<List<ModelData>> {

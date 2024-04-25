@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.Rupees_Fragment">
+    tools:context=".Fragment.Taka_Fragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -132,10 +132,10 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="60dp"
                         android:layout_height="30dp"
-                        android:layout_marginRight="10dp"
                         android:layout_alignParentRight="true"
                         android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true">
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"

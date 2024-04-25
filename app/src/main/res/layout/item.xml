@@ -40,7 +40,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ruppesLinare1"
+            android:id="@+id/takaLinare1"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_alignParentRight="true"
@@ -49,7 +49,7 @@
             android:gravity="center">
 
             <TextView
-                android:id="@+id/txtRuppesExport"
+                android:id="@+id/txtTakaExport"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -63,7 +63,7 @@
             android:id="@+id/linear1"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_toStartOf="@id/ruppesLinare1"
+            android:layout_toStartOf="@id/takaLinare1"
             android:background="#FAEDED"
             android:gravity="center">
 
@@ -73,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_toStartOf="@id/txtRuppesExport"
+                android:layout_toStartOf="@id/txtTakaExport"
                 android:text=" "
                 android:textColor="@color/red"
                 android:textSize="18dp"

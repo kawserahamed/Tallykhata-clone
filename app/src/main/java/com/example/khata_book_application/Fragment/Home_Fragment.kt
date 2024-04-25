@@ -1,7 +1,6 @@
 package com.example.khata_book_application.Fragment
 
 import android.annotation.SuppressLint
-import android.app.Dialog
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.os.Bundle
@@ -15,7 +14,6 @@ import android.widget.ImageView
 import android.widget.RadioGroup
 import android.widget.RelativeLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -43,6 +41,7 @@ class Home_Fragment(val mainActivity: MainActivity) : Fragment() {
     lateinit var stas1: String
     lateinit var savebtn: Button
     lateinit var j1: String
+    private lateinit var adpter: New_Contect_Adpter
 
     var list = arrayListOf<ModelData>()
     var list1 = arrayListOf<ModelData>()
@@ -59,7 +58,7 @@ class Home_Fragment(val mainActivity: MainActivity) : Fragment() {
     ): View? {
 
         var view = inflater.inflate(R.layout.fragment_home_, container, false)
-        viewmodel = ViewModelProvider(mainActivity).get(DBViewModel::class.java)
+        viewmodel = ViewModelProvider(this).get(DBViewModel::class.java)
 
         recycle_view_home = view.findViewById<RecyclerView>(R.id.recycle_view_home)
         ADD_CUSTOMER_BTN = view.findViewById<RelativeLayout>(R.id.ADD_CUSTOMER_BTN)
@@ -78,19 +77,15 @@ class Home_Fragment(val mainActivity: MainActivity) : Fragment() {
 
         }
 
-        var db = DB_Helper(activity)
+
         list1.clear()
+        val db = DB_Helper(activity)
         list1 = db.readData()
         viewmodel.setList(list1)
-        var adpter = New_Contect_Adpter(mainActivity, list1)
-        var lm = LinearLayoutManager(mainActivity)
-        recycle_view_home.layoutManager = lm
-        recycle_view_home.adapter = adpter
+        setUpRv(list1)
 
         viewmodel.getFilteredList().observe(viewLifecycleOwner) {
-            list1.clear()
-            list1.addAll(it)
-            adpter.notifyDataSetChanged()
+            setUpRv(it)
         }
 
         /*filterHome.setOnClickListener {
@@ -159,10 +154,10 @@ class Home_Fragment(val mainActivity: MainActivity) : Fragment() {
         var i = 0;
         while (i < list.size) {
             if (list[i].type.equals("0")) {
-                incomeTotal = incomeTotal + list[i].ruppes.toInt()
+                incomeTotal = incomeTotal + list[i].taka.toInt()
 
             } else {
-                expTotal = expTotal + list[i].ruppes.toInt()
+                expTotal = expTotal + list[i].taka.toInt()
             }
             i++
 //            Toast.makeText(activity,"$incomeTotal",Toast.LENGTH_SHORT).show()
@@ -183,10 +178,8 @@ class Home_Fragment(val mainActivity: MainActivity) : Fragment() {
 //            binding11.txtExp.text = (incomeTotal - expTotal).toString()
 //        }
 //        if (incomeTotal > expTotal) {
-//            binding11.todayIncome.setImageResource(R.drawable.rupeeincome)
 //            binding11.txtExp.setTextColor(Color.parseColor("#0F814D"))
 //        } else if (incomeTotal < expTotal) {
-//            binding11.todayIncome.setImageResource(R.drawable.rupeeexpence)
 //            binding11.txtExp.setTextColor(Color.parseColor("#DF1837"))
 //        }
 
@@ -195,10 +188,8 @@ class Home_Fragment(val mainActivity: MainActivity) : Fragment() {
 
 
     override fun onResume() {
-
         incomeTotal = 0
         expTotal = 0
-
         super.onResume()
         var db = DB_Helper(mainActivity)
         this.list = db.readData()
@@ -208,8 +199,17 @@ class Home_Fragment(val mainActivity: MainActivity) : Fragment() {
             incomeExpenceCount(list)
         } catch (e: Exception) {
         }
-
         viewmodel.setList(list)
+        setUpRv(list)
+
+
+    }
+
+    fun setUpRv(l1: List<ModelData>) {
+        var adpter = New_Contect_Adpter(mainActivity, l1)
+        var lm = LinearLayoutManager(mainActivity)
+        recycle_view_home.layoutManager = lm
+        recycle_view_home.adapter = adpter
 
     }
 

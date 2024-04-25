@@ -39,7 +39,7 @@ class Add_Custmer_Data : AppCompatActivity() {
         lateinit var callAddCustomer: ImageView
         lateinit var call_img: ImageView
         lateinit var name: String
-        lateinit var ruppes: String
+        lateinit var taka: String
         lateinit var delete_Data_expence: RelativeLayout
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -53,7 +53,7 @@ class Add_Custmer_Data : AppCompatActivity() {
           name = intent.getStringExtra("name").toString()
           mobile = intent.getStringExtra("mobile").toString()
           id = intent.getStringExtra("id").toString()
-          ruppes = intent.getStringExtra("ruppes").toString()
+          taka = intent.getStringExtra("taka").toString()
           type = intent.getStringExtra("type").toString()
           time = intent.getStringExtra("time").toString()
           date = intent.getStringExtra("date").toString()
@@ -80,7 +80,7 @@ class Add_Custmer_Data : AppCompatActivity() {
         }
 
         details_num_txt.text = mobile
-        amount_details_txt.text = ruppes
+        amount_details_txt.text = taka
         date_income_details.text = t1
         time_txt.text=time
         date_txt.text=date
@@ -143,11 +143,11 @@ class Add_Custmer_Data : AppCompatActivity() {
 
         val name = Editable.Factory.getInstance().newEditable(name)
         val mobile = Editable.Factory.getInstance().newEditable(mobile)
-        val ruppes = Editable.Factory.getInstance().newEditable(ruppes)
+        val taka = Editable.Factory.getInstance().newEditable(taka)
 
         customer_name_edt_i.text = name
         customer_no_edt_i.text = mobile
-        amount_edt_i.text = ruppes
+        amount_edt_i.text = taka
 
         updateBtnItem.setOnClickListener {
 

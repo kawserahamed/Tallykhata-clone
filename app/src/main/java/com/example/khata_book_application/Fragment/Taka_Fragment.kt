@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.khata_book_application.R
 
 
-class Rupees_Fragment : Fragment() {
+class Taka_Fragment : Fragment() {
 
     lateinit var j2: String
     lateinit var name_binss1: TextView
@@ -20,7 +20,7 @@ class Rupees_Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        var view = inflater.inflate(R.layout.fragment_rupees_, container, false)
+        var view = inflater.inflate(R.layout.fragment_taka, container, false)
 
           name_binss1 = view.findViewById<TextView>(R.id.name_binss1)
 

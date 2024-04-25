@@ -18,7 +18,7 @@ class DB_Helper(
     override fun onCreate(db: SQLiteDatabase?) {
 
         var quary =
-            "CREATE TABLE student (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,mobile TEXT,ruppes TEXT,type TEXT,time TEXT,date TEXT)"
+            "CREATE TABLE student (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,mobile TEXT,taka TEXT,type TEXT,time TEXT,date TEXT)"
         db!!.execSQL(quary)
 
     }
@@ -28,7 +28,7 @@ class DB_Helper(
 
     }
 
-    fun insertData(name1: String, mobile1: String, ruppes: String, type: String,time : String,date:String) {
+    fun insertData(name1: String, mobile1: String, taka: String, type: String, time : String, date:String) {
 
         var db = writableDatabase
 
@@ -36,7 +36,7 @@ class DB_Helper(
 
         cv.put("name", name1)
         cv.put("mobile", mobile1)
-        cv.put("ruppes", ruppes)
+        cv.put("taka", taka)
         cv.put("type", type)
         cv.put("time", time)
         cv.put("date", date)
@@ -67,13 +67,13 @@ class DB_Helper(
                 var id = cursor.getString(cursor.getColumnIndex("id"))
                 var name = cursor.getString(cursor.getColumnIndex("name"))
                 var mobile = cursor.getString(cursor.getColumnIndex("mobile"))
-                var ruppes = cursor.getString(cursor.getColumnIndex("ruppes"))
+                var taka = cursor.getString(cursor.getColumnIndex("taka"))
                 var type = cursor.getString(cursor.getColumnIndex("type"))
                 var time = cursor.getString(cursor.getColumnIndex("time"))
                 var date = cursor.getString(cursor.getColumnIndex("date"))
 
 
-                var m1 = ModelData(id, name, mobile, ruppes, type,time,date)
+                var m1 = ModelData(id, name, mobile, taka, type,time,date)
 
                 list.add(m1)
 
@@ -95,7 +95,7 @@ class DB_Helper(
 
     }
 
-    fun UpdateData(id: String, name1: String, mobile1: String, ruppes: String) {
+    fun UpdateData(id: String, name1: String, mobile1: String, taka: String) {
 
         var db = writableDatabase
 
@@ -103,7 +103,7 @@ class DB_Helper(
 
         cv.put("name", name1)
         cv.put("mobile", mobile1)
-        cv.put("ruppes", ruppes)
+        cv.put("taka", taka)
 76
 
         db.update("student", cv, "id = $id", null)
@@ -129,13 +129,13 @@ class DB_Helper(
                 var id = cursor.getString(cursor.getColumnIndex("id"))
                 var name = cursor.getString(cursor.getColumnIndex("name"))
                 var mobile = cursor.getString(cursor.getColumnIndex("mobile"))
-                var ruppes = cursor.getString(cursor.getColumnIndex("ruppes"))
+                var taka = cursor.getString(cursor.getColumnIndex("taka"))
                 var type = cursor.getString(cursor.getColumnIndex("type"))
                 var time = cursor.getString(cursor.getColumnIndex("time"))
                 var date = cursor.getString(cursor.getColumnIndex("date"))
 
 
-                var m1 = ModelData(id, name, mobile, ruppes, type, time, date)
+                var m1 = ModelData(id, name, mobile, taka, type, time, date)
 
                 list.add(m1)
 

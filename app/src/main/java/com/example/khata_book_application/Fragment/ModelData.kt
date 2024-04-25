@@ -4,7 +4,7 @@ class ModelData(
     val id: String,
     val name: String,
     val mobile: String,
-    val ruppes: String,
+    val taka: String,
     val type: String,
     val time: String,
     val date: String

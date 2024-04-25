@@ -1,13 +1,11 @@
 package com.example.khata_book_application.View
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.khata_book_application.DB_Helper
-import com.example.khata_book_application.Fragment.Home_Fragment
 import com.example.khata_book_application.Fragment.ModelData
 import com.example.khata_book_application.R
 import com.google.android.material.textfield.TextInputEditText
@@ -21,7 +19,7 @@ class New_Contect_Activity : AppCompatActivity() {
     lateinit var rv4: RelativeLayout
     lateinit var edit_name_data: TextInputEditText
     lateinit var edit_mobile_data: TextInputEditText
-    lateinit var edit_ruppes: TextInputEditText
+    lateinit var edit_taka: TextInputEditText
     lateinit var Continue_item_btn: Button
     lateinit var recycleview: RecyclerView
     lateinit var redioGup1: RadioGroup
@@ -76,7 +74,7 @@ class New_Contect_Activity : AppCompatActivity() {
 
                 edit_name_data.text.toString(),
                 edit_mobile_data.text.toString(),
-                edit_ruppes.text.toString(),
+                edit_taka.text.toString(),
                 stats,dateTime,datecurrent
 
             )
@@ -110,7 +108,7 @@ class New_Contect_Activity : AppCompatActivity() {
         rv4 = findViewById<RelativeLayout>(R.id.rv4)
         edit_name_data = findViewById<TextInputEditText>(R.id.edit_name)
         edit_mobile_data = findViewById<TextInputEditText>(R.id.edit_mobile)
-        edit_ruppes = findViewById<TextInputEditText>(R.id.edit_ruppes)
+        edit_taka = findViewById<TextInputEditText>(R.id.edit_taka)
         Continue_item_btn = findViewById<Button>(R.id.Continue_item_btn)
         recycleview = findViewById<RecyclerView>(R.id.recycleview)
         redioGup1 = findViewById<RadioGroup>(R.id.redioGup1)
